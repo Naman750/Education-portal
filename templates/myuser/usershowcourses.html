@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Eduportal-  User show courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <center><h1> Eduportal- User show courses Data </h1></center> &nbsp; &nbsp; 
+    <!-- navbar opens-->
+    <nav class="navbar navbar-default custom-navbar">
+      {% load static  %}
+      <link rel = "stylesheet" href = "{%  static 'styles/usershowcourses.css' %}" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Eduportal-show courses  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link"  href="/user/usershowcourses">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/usershowusers"> User-show users </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/loginform"> Logout </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            
+            <!-- Login modal start-->
+            <!-- Button trigger modal -->
+
+
+
+            <!-- Login modal end-->
+          </div>
+        </div>
+      </nav> &nbsp; &nbsp;
+    <!--navbar closes-->
+   {% comment %} <div> Hello students.... {{ key1}}</div>
+    <div> Hello students.... {{ key2}}</div>
+     {% endcomment %}
+     {% load static  %}
+     <link rel = "stylesheet" href = "{%  static 'styles/usershowcourses.css' %}" >
+     <div class = "table">
+
+    <!--course content start-->
+    <table class= "table table-bordered">
+        <thead>
+          {% load static %}
+          <img src = "{% static 'images/coursere1.jpg' %}"> <br><br>
+
+            <tr>
+                <th scope="col">Enter uid of students</th>
+                <th scope="col">Enter course Name</th>
+                <th scope="col"> Start Date</th>
+                <th scope="col">Select Batch</th>
+                <th scope="col">Select Date</th>
+                <th scope="col"> course price </th>
+                <th scope="col"> course img </th>
+                <th scope="col"> purchase  course </th>
+                <th scope="col">  Button </th>
+                
+                
+              </tr>
+            </thead>
+        
+              
+{% for course in courses %}
+{% comment %}<li>{{user.fname}} {{user.lname}}  {{user.mobile}} {{user.email}} {{user.password}}   {{user.dob}}  {{user.repw}}</li>
+ {% endcomment %}         
+          <tr>
+            <td scope="col">{{course.uid}}</td>
+            <td scope="col">{{course.cname}}</td>
+            <td scope="col">{{course.startdate}} </td>
+            <td scope="col">{{course.cbatch}} </td>
+            <td scope="col">{{course.batchday}} </td>
+            <td scope="col">{{course.cprice}}</td>
+            <td scope="col">
+
+              {% if course.uid == 1 %}
+              {% load static %}
+          <center><img src = "{% static 'cimg/java.jpg' %}"></center>
+           {% endif %}   
+           {% if course.uid == 2 %}
+              
+         <center> <img src = "{% static 'cimg/python.jpg' %}"></center>
+           {% endif %}
+           {% if course.uid == 3 %}
+              
+         <center> <img src = "{% static 'cimg/php.jpg' %}"></center>
+           {% endif %}
+           {% if course.uid == 4 %}
+              
+         <center> <img src = "{% static 'cimg/Nodejs.jpg' %}"></center>
+           {% endif %}
+             
+            </td>
+            <td scope="col"> 
+              <a href = "http://127.0.0.1:8000/user/purchase"><button> purchase course  </button></a> &nbsp
+            </td>
+             
+            <td scope="col"> 
+              {% if course.uid == 1 %}
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/add/"><button> Insert course </button></a> &nbsp;
+               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/44/change/"><button> Update course </button></a> &nbsp;
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/44/delete/"><button> Delete  course </button></a> &nbsp;
+              {% endif %}
+
+              {% if course.uid == 2 %}
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/add/"><button>  Insert course  </button></a> &nbsp;
+               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/45/change/"><button> Update course </button></a> &nbsp;
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/45/delete/"><button> Delete  course </button></a> &nbsp;
+              {% endif %}
+
+              {% if course.uid == 3 %}
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/add/"><button>  Insert course  </button></a> &nbsp;
+               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/46/change/"><button> Update course </button></a> &nbsp;
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/46/delete/"><button> Delete  course </button></a> &nbsp;
+              {% endif %}
+
+              {% if course.uid == 4 %}
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/add/"><button>  Insert course  </button></a> &nbsp;
+               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/47/change/"><button> Update course </button></a> &nbsp;
+              <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/47/delete/"><button> Delete  course </button></a> &nbsp;
+              {% endif %}
+
+
+
+  
+              </td>
+
+
+          </tr>
+
+          
+          {% endfor %} 
+          
+        
+      </table> &nbsp; &nbsp;
+    </div>
+
+      
+    <!--course content end-->
+
+    <!--Footer start-->
+   <!-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+              <img class="mb-2" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+              <small class="d-block mb-3 text-muted">© 2017–2022</small>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Features</h5>
+              <ul class="list-unstyled text-small">
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Resources</h5>
+              <ul class="list-unstyled text-small">
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>About</h5>
+              <ul class="list-unstyled text-small">
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+    < Footer End> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,12 @@
+.container-fluid{
+   background-color: cadetblue;
+   font-size: xx-large;
+}
+.table{
+  background-color: lightpink;
+  font-size: large;
+}
+.footer{
+ background-color: cyan;
+ font-size: xx-large;
+}

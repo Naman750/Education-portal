@@ -1,0 +1,11 @@
+.container-fluid{
+ background-color: gainsboro;
+ font-size: xx-large;
+}
+#searchusers{
+ background-color: lightskyblue;
+ font-size: xx-large;
+}
+.footer{
+ background-color: cyan;
+}
