@@ -22,6 +22,8 @@ class CourseReg(models.Model):
     batchday = models.CharField(max_length=30)
     cimg = models.ImageField(upload_to= "cimg/",  max_length= 100)
     cprice = models.IntegerField()
+    cpdf = models.FileField(upload_to= "cpdf/", null= True)
+    
     
 
 class CourseReg1(models.Model):
@@ -36,7 +38,21 @@ class CourseApply(models.Model):
     cbatch = models.CharField(max_length=30) 
     batchday = models.CharField(max_length=30) 
 
+class adminuser(models.Model):
+    adminemail = models.CharField(max_length=30)
+    adminpassword = models.CharField(max_length=30)
 
+class QuizQuestion(models.Model):
+    quiz_subject  = models.CharField(max_length=200, null= True)
+    question_text = models.CharField(max_length=200)
+    choice_a = models.CharField(max_length=200)
+    choice_b = models.CharField(max_length=200)
+    choice_c = models.CharField(max_length=200)
+    choice_d = models.CharField(max_length=200)
+    correct_choice = models.CharField(max_length= 200)
+
+    def __str__(self):
+        return self.question_text
 
     
     

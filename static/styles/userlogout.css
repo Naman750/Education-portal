@@ -1,9 +1,11 @@
 .container-fluid{
  background-color: burlywood;
+ font-size: xx-large;
+ 
 }
 .table{
  background-color:  lightcoral;
 }
 .footer{
- background-color: cornsilk;
+ background-color: cornsilk ;
 }

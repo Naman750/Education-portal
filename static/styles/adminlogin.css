@@ -1,0 +1,15 @@
+.container-fluid{
+ background-color: lightslategrey;
+ font-size: xx-large;
+}
+
+#admindiv{
+ background-color: lightsalmon;
+}
+.adminfooter{
+ background-color: lightsteelblue ;
+}
+ 
+#userdiv {
+    background-color: aqua;
+}

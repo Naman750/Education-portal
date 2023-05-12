@@ -26,7 +26,7 @@
                 <a class="nav-link" aria-current="page" href="/user">User</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/user/showusers">showusers</a>
+                <a class="nav-link" aria-current="page" href="/user/userlogout">userlogin </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -70,6 +70,12 @@
                 <th scope="col">Select Date</th>
                 <th scope="col"> course price </th>
                 <th scope="col"> course img </th>
+                <th scope="col"> course pdf </th>
+                <th scope="col"> course video tutorial </th>
+                <th scope="col"> courses  quiz </th>
+                <th scope="col"> purchase course  </th>
+
+
                 
               </tr>
             </thead>
@@ -89,11 +95,11 @@
             <td scope="col"> 
               {% if course.uid == 1 %}
               {% load static %}
-          <center><img src = "{% static 'cimg/java.jpg' %}"></center>
+          <center><img src = "{% static 'cimg/java1.jpg' %}"></center>
            {% endif %}   
            {% if course.uid == 2 %}
               
-         <center> <img src = "{% static 'cimg/python.jpg' %}"></center>
+         <center> <img src = "{% static 'cimg/python1.jpg' %}"></center>
            {% endif %}
 
            {% if course.uid == 3 %}
@@ -103,10 +109,71 @@
 
              {% if course.uid == 4 %}
               
-             <center> <img src = "{% static 'cimg/Nodejs.jpg' %}"></center>
+             <center> <img src = "{% static 'cimg/Nodejs1.jpg' %}"></center>
                {% endif %}
+
+               <td scope="col"> 
+
+                {% if course.uid == 1 %}
+                <a href = "https://www.tutorialspoint.com/java/java_tutorial.pdf"><button>  JAVA PDF  </button></a> &nbsp; <br><br>
+                <center>{% static 'cpdf/java_tutorial.pdf' %}</center>
+                {% endif %}  
+
+             {% if course.uid == 2 %}   
+             <a href = "https://www.tutorialspoint.com/python3/python_tutorial.pdf"><button>  PYTHON PDF </button></a> &nbsp; <br><br>
+             <center>{% static 'cpdf/python_tutorial.pdf' %}</center>
+             {% endif %}
+  
+             {% if course.uid == 3 %}
+             <a href = "https://www.tutorialspoint.com/php/php_tutorial.pdf"><button>  PHP PDF  </button></a> &nbsp; <br><br>
+             <center>{% static 'cpdf/php_tutorial.pdf' %}</center>
+               {% endif %}
+  
+               {% if course.uid == 4 %}
+               <a href = "https://www.tutorialspoint.com/nodejs/nodejs_tutorial.pdf"><button>  NODEJS PDF </button></a> &nbsp; <br><br>
+               <center>{% static 'cpdf/nodejs_tutorial.pdf' %}</center>
+                 {% endif %}  
+
+                 <td scope="col"> 
+
+                  {% if course.uid == 1 %} 
+                  <a href = "https://www.youtube.com/watch?v=OjdT2l-EZJA&list=PLfn3cNtmZdPOe3R_wO_h540QNfMkCQ0ho"><button>  JAVA VIDEOS </button></a> &nbsp; <br><br>
+                  {% endif %}
+
+                  {% if course.uid == 2 %} 
+                  <a href = "https://www.youtube.com/watch?v=tA42nHmmEKw&list=PLh2mXjKcTPSACrQxPM2_1Ojus5HX88ht7"><button>  PYTHON VIDEOS </button></a> &nbsp; <br><br>
+                  {% endif %}
+
+                  {% if course.uid == 3 %} 
+                  <a href = "https://www.youtube.com/watch?v=a_qREkJ78f4&list=PL0b6OzIxLPbyrzCMJOFzLnf_-_5E_dkzs"><button>  PHP VIDEOS </button></a> &nbsp; <br><br>
+                  {% endif %}
+
+                  {% if course.uid == 4 %} 
+                  <a href = "https://www.youtube.com/watch?v=IIpiLZGTWuo&list=PLwGdqUZWnOp00IbeN0OtL9dmnasipZ9x8"><button>  NODEJS VIDEOS </button></a> &nbsp; <br><br>
+                  {% endif %}
             
             
+                  <td scope="col">
+                    {% if course.uid == 1 %}   
+                    <a href = "https://presenter.jivrus.com/p/1cB-DkpvqasLSbmC9COkOL1HJ8s69vJO0G_1KqouD81c"><button>  JAVA QUIZ </button></a> &nbsp; <br><br>
+                    {% endif %}
+
+                    {% if course.uid == 2 %}   
+                    <a href = "https://presenter.jivrus.com/p/1NsQ67U3UCzuyFuRrNCbdbvzr4BMHFBVcRiTk3GzMd9w"><button>  PYTHON QUIZ </button></a> &nbsp; <br><br>
+                    {% endif %}
+
+                    {% if course.uid == 3 %}   
+                    <a href = "https://presenter.jivrus.com/p/1dfY6SSqerNFhXJvX-K22hVBKH1J95y3D0KS_132oM04"><button>  PHP QUIZ </button></a> &nbsp; <br><br>
+                    {% endif %}
+
+                    {% if course.uid == 4 %}   
+                    <a href = "https://presenter.jivrus.com/p/1Df_PUAqPshS88cggrtj-BJk_ugR03hRhqDfjvFDPpRk"><button>  NODEJS QUIZ </button></a> &nbsp; <br><br>
+                    {% endif %}
+
+                    <td scope="col"> 
+                      <a href = "http://127.0.0.1:8000/user/purchase"><button> purchase course  </button></a> &nbsp
+                    </td>
+
           </tr>
           
 

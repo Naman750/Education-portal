@@ -2,12 +2,15 @@ from django.shortcuts import render , HttpResponse
 from  myuser.models import CourseReg
 from  myuser.models import CourseReg1
 from  myuser.models import CourseApply
+from  myuser.models import adminuser
 from  myuser.models import userReg
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 import os
 from django.http import HttpResponse
+from .forms import QuizForm
+from .models import QuizQuestion
 
 
     
@@ -17,14 +20,84 @@ from django.http import HttpResponse
 # Create your views here.
 
 # Create your views here.
+def quiz(request):
+    try:    
+      allquestion = QuizQuestion.objects.all()
+      data = {"questions": allquestion}
+      return render(request, 'myuser/quiz.html', data)
+    except:
+         return render(request, 'myuser/quiz.html')
 
+def javaresult(request):
+    try:
+      allquestion = QuizQuestion.objects.all()
+      data = {"questions": allquestion}   
+      return render(request, 'myuser/javaresult.html',data )
+    except:
+         return render(request, 'myuser/javaresult.html')
+    
+def pythonresult(request):
+    try:
+      allquestion = QuizQuestion.objects.all()
+      data = {"questions": allquestion}   
+      return render(request, 'myuser/pythonresult.html',data )
+    except:
+         return render(request, 'myuser/pythonresult.html')
+    
+def phpresult(request):
+    try:
+      allquestion = QuizQuestion.objects.all()
+      data = {"questions": allquestion}   
+      return render(request, 'myuser/phpresult.html',data )
+    except:
+         return render(request, 'myuser/phpresult.html')
+    
+def nodejsresult(request):
+    try:
+      allquestion = QuizQuestion.objects.all()
+      data = {"questions": allquestion}   
+      return render(request, 'myuser/nodejsresult.html',data )
+    except:
+         return render(request, 'myuser/nodejsresult.html')
      
+
+
 
 
 def index(request):
     #return HttpResponse("Welcome user page")
     #return render(request, "myuser/about.html")
     return render(request, "myuser/index.html")
+
+def userlogout(request):
+    #return HttpResponse("Welcome user page")
+    #return render(request, "myuser/about.html")
+    return render(request, "myuser/userlogout.html")
+
+
+def userlogin(request):
+                    try:                
+                       lid = request.POST.get('lid')
+                       pwd = request.POST.get('pwd') 
+                       searchedusers = userReg.objects.filter(email = lid, password = pwd)
+                       print("show searched users",searchedusers)
+                       print("show searched users",len(searchedusers))
+                       data = {"susers": searchedusers}
+                       if len(searchedusers) == 0:
+                            print("user is unauthenticated")
+                            return render(request, "myuser/userlogout.html")
+                       else:
+                         print("user is authenticated")                                         
+                         return render(request, "myuser/userlogin.html",data)
+                    except:
+                         
+                         return render(request, "myuser/userlogout.html")
+                                        
+                        
+    #return HttpResponse("Welcome user page")
+    #return render(request, "myuser/about.html")
+    
+
 
 
 
@@ -54,8 +127,8 @@ def userhomeafterlogin(request):
 
 
 
-def contact(request):
-     return render(request, "myuser/contact.html")
+def adminlogout(request):
+     return render(request, "myuser/adminlogout.html")
 
 def payment(request):
      return render(request, "myuser/payment.html")
@@ -94,23 +167,23 @@ def purchase(request):
     #return HttpResponse("Welcome user  page -> about")
     
 
-def loginform(request):
+def adminlogin(request):
                     try:                
                        lid = request.POST.get('lid')
                        pwd = request.POST.get('pwd') 
-                       searchedusers = userReg.objects.filter(email = lid, password = pwd)
+                       searchedusers = adminuser.objects.filter(adminemail = lid, adminpassword = pwd)
                        print("show searched users",searchedusers)
                        print("show searched users",len(searchedusers))
                        data = {"susers": searchedusers}
                        if len(searchedusers) == 0:
                             print("user is unauthenticated")
-                            return render(request, "myuser/contact.html")
+                            return render(request, "myuser/adminlogout.html")
                        else:
                          print("user is authenticated")                                         
-                         return render(request, "myuser/loginform.html",data)
+                         return render(request, "myuser/adminlogin.html",data)
                     except:
                          
-                         return render(request, "myuser/contact.html")
+                         return render(request, "myuser/adminlogout.html")
              
 
         

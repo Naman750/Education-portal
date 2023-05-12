@@ -25,7 +25,7 @@ urlpatterns = [
     path("",views.index, name= "userpage"),
     path("about",views.about, name= "about"),
     path("home",views.home, name= "home"),
-    path("contact",views.contact, name= "contact"),
+    path("adminlogout",views.adminlogout, name= "adminlogout"),
     path("services",views.services, name= "services"),
     path("showcourses",views.showcourses, name= "showcourses"),
     path("regcourse",views.regcourse, name= "regcourse"),
@@ -35,13 +35,21 @@ urlpatterns = [
     path("courseApply",views.courseApply, name= "courseApply"),
     path("showcourseApply",views.showcourseApply, name= "showcourseApply"),
     path("searchusers",views.searchusers, name= "searchusers"),
-    path("loginform",views.loginform, name= "loginform"),
+    path("adminlogin",views.adminlogin, name= "adminlogin"),
     path("usershowcourses",views.usershowcourses, name= "usershowcourses"),
     path("purchase",views.purchase, name= "purchase"),
     path("payment",views.payment, name= "payment"),
     path("searchcourses",views.searchcourses, name= "searchcourses"),
     path("userhomeafterlogin",views.userhomeafterlogin, name= "userhomeafterlogin"),
     path("usershowusers",views.usershowusers, name= "usershowusers"),
+    path("quiz",views.quiz, name= "quiz"),
+    path("javaresult",views.javaresult, name= "javaresult"),
+    path("pythonresult",views.pythonresult, name= "pythonresult"),
+    path("phpresult",views.phpresult, name= "phpresult"),
+    path("nodejsresult",views.nodejsresult, name= "nodejsresult"),
+    path("userlogin",views.userlogin, name= "userlogin"),
+    path("userlogout",views.userlogout, name= "userlogout"),
+    
      
     
     

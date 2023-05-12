@@ -26,7 +26,7 @@
                 <a class="nav-link" href="/user/usershowusers"> User-show users </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/user/loginform"> Logout </a>
+                <a class="nav-link" href="/user/adminlogout"> Logout </a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,7 +75,6 @@
                 <th scope="col">Select Date</th>
                 <th scope="col"> course price </th>
                 <th scope="col"> course img </th>
-                <th scope="col"> purchase  course </th>
                 <th scope="col">  Button </th>
                 
                 
@@ -97,11 +96,11 @@
 
               {% if course.uid == 1 %}
               {% load static %}
-          <center><img src = "{% static 'cimg/java.jpg' %}"></center>
+          <center><img src = "{% static 'cimg/java1.jpg' %}"></center>
            {% endif %}   
            {% if course.uid == 2 %}
               
-         <center> <img src = "{% static 'cimg/python.jpg' %}"></center>
+         <center> <img src = "{% static 'cimg/python1.jpg' %}"></center>
            {% endif %}
            {% if course.uid == 3 %}
               
@@ -109,13 +108,11 @@
            {% endif %}
            {% if course.uid == 4 %}
               
-         <center> <img src = "{% static 'cimg/Nodejs.jpg' %}"></center>
+         <center> <img src = "{% static 'cimg/Nodejs1.jpg' %}"></center>
            {% endif %}
              
             </td>
-            <td scope="col"> 
-              <a href = "http://127.0.0.1:8000/user/purchase"><button> purchase course  </button></a> &nbsp
-            </td>
+            
              
             <td scope="col"> 
               {% if course.uid == 1 %}
@@ -140,6 +137,8 @@
               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/add/"><button>  Insert course  </button></a> &nbsp;
                <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/47/change/"><button> Update course </button></a> &nbsp;
               <a href = "http://127.0.0.1:8000/admin/myuser/coursereg/47/delete/"><button> Delete  course </button></a> &nbsp;
+              
+
               {% endif %}
 
 

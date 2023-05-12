@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>User login page </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   
@@ -13,27 +13,35 @@
 
     <nav class="navbar navbar-default custom-navbar">
       {% load static  %}
-      <link rel = "stylesheet" href = "{%  static 'styles/purchase.css' %}" >
+      <link rel = "stylesheet" href = "{%  static 'styles/userlogout.css' %}" >
       
         <div class="container-fluid">
 
 
-        <h1>  <a class="navbar-brand" href="#"><center>EduPortal-payment page </center></a></h1>
+        <h1>  <a class="navbar-brand" href="#"><center>EduPortal-user login page </center></a></h1>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/user/purchase">Home</a>
+                    <a class="nav-link" aria-current="page" href="/user">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/user/contact">Logout</a>
+                    <a class="nav-link" aria-current="page" href="/user/contact">Loginform</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/user/usershowcourses"> user show courses </a>
+                    <a class="nav-link" aria-current="page" href="/user/userreg">User Reg</a>
                   </li>
-
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/user/regcourse">Reg course </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/user/showcourses"> Show Courses </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/contact">contact</a>
+                  </li>
 
                   <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -57,27 +65,51 @@
         </div>  &nbsp; &nbsp;
       </nav>
           {% comment %} Navbar End {% endcomment %}
-          {% load static  %}
-    <link rel = "stylesheet" href = "{%  static 'styles/purchase.css' %}" >
-    <div class = "purchase">
+          <center><h1>Welcome to eduportal user login </h1> &nbsp; &nbsp;</center>
+         
+    
+{% comment %} Login Start {% endcomment %}
+<div class="row align-items-center g-lg-5 py-5">
 
-          <center><h1 style="color: green">Payment Page</h1>       <br> <br> 
-            <form method="post" action="{% url 'purchase' %}">
-                {% csrf_token %}
-                <label for="card_number">Card Number:</label> &nbsp; &nbsp;
-                <input type="Number" id="card_number" name="card_number" placeholder = "card number"  />
-                <br> <br> <br>
-                <label for="expiry_date">Expiry Date:</label> &nbsp; &nbsp;
-                <input type="text" id="expiry_date" name="expiry_date" placeholder = "Expiry Date"  />
-                <br> <br> <br>
-                <label for="cvv">CVV:</label> &nbsp; &nbsp;
-                <input type="Number" id="cvv" name="cvv" placeholder = "CVV" />
-                <br><br> <br> 
-                <input type = "submit" name = "submit">
-            </div>
-            </form> </center>
-          
+    <div class="col-lg-7 text-center text-lg-start">
+      {% load static %}
+      <img src = "{% static 'images/Mobilelogin.jpg' %}">
+      <link rel = "stylesheet" href = "{%  static 'styles/userlogout.css' %}" >
+          <div class = "table">
+    <center> <h1> <p class="col-lg-10 fs-4">In this user login  user  can login and access courses and purchase it 
+     </p></center>
+    </h1>
+  </div>
+  
+         
+      <form  action = "userlogin"    method = "POST" class="p-4 p-md-5 border rounded-3 bg-light" > 
+        {% csrf_token %}
         
+
+        <div class="form-floating mb-3">
+          <input type="email" name = "lid" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password"  name = "pwd" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+        <hr class="my-4">
+        <small class="text-muted">By clicking Sign up, you agree to the terms of use.
+        </small>
+      </form>
+    </div>
+    </div> 
+  </div> 
+  
+  
+  
 {% comment %} Login End {% endcomment %}
 
 
@@ -85,7 +117,7 @@
 
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
   {% load static  %}
-    <link rel = "stylesheet" href = "{%  static 'styles/purchase.css' %}" >
+    <link rel = "stylesheet" href = "{%  static 'styles/userlogout.css' %}" >
     <div class = "footer">
     <div class="row">
       <div class="col-12 col-md">

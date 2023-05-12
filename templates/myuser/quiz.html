@@ -1,0 +1,66 @@
+{% load static  %}
+      <link rel = "stylesheet" href = "{%  static 'styles/quiz.css' %}" >
+        <div class="quiz">
+<center> <h1> QUIZ PAGE </h1></center>
+
+    {% for question in questions %}
+
+    {% if question.quiz_subject  == 'JAVA' %}
+
+
+    <h1>  QUIZ SUBJECT  : {{ question.quiz_subject }}</h1>
+    <h2>{{ question.question_text }}</h2>
+    <label><input type="radio" name="answer" value="a" > {{ question.choice_a }}</label><br>
+    <label><input type="radio" name="answer" value="b" > {{ question.choice_b }}</label><br>
+    <label><input type="radio" name="answer" value="c" > {{ question.choice_c }}</label><br>
+    <label><input type="radio" name="answer" value="d" > {{ question.choice_d }}</label><br> <br> 
+    <a href = "http://127.0.0.1:8000/user/javaresult"><button>  Submit  </button></a> &nbsp; <br><br>
+
+    {% endif %}
+
+
+      {% if question.quiz_subject  == 'PYTHON' %}
+
+      <h1> QUIZ SUBJECT : {{ question.quiz_subject }}</h1>
+      <h2>{{ question.question_text }}</h2>
+      <label><input type="radio" name="answer" value="a"> {{ question.choice_a }}</label><br>
+      <label><input type="radio" name="answer" value="b"> {{ question.choice_b }}</label><br>
+      <label><input type="radio" name="answer" value="c"> {{ question.choice_c }}</label><br>
+      <label><input type="radio" name="answer" value="d"> {{ question.choice_d }}</label><br> <br>
+      <a href = "http://127.0.0.1:8000/user/pythonresult"><button>  Submit  </button></a> &nbsp; <br><br>
+
+      {% endif %}
+
+      {% if question.quiz_subject  == 'PHP' %}
+
+      <h1> QUIZ SUBJECT :{{ question.quiz_subject }}</h1>
+      <h2>{{ question.question_text }}</h2>
+      <label><input type="radio" name="answer" value="a"> {{ question.choice_a }}</label><br>
+      <label><input type="radio" name="answer" value="b"> {{ question.choice_b }}</label><br>
+      <label><input type="radio" name="answer" value="c"> {{ question.choice_c }}</label><br>
+      <label><input type="radio" name="answer" value="d"> {{ question.choice_d }}</label><br> <br>
+      <a href = "http://127.0.0.1:8000/user/phpresult"><button>  Submit  </button></a> &nbsp; <br><br>
+     
+
+      {% endif %}
+
+
+
+      {% if question.quiz_subject  == 'NODEJS' %}
+      
+      <h1> QUIZ SUBJECT :{{ question.quiz_subject }}</h1>
+      <h2>{{ question.question_text }}</h2>
+      <label><input type="radio" name="answer" value="a"> {{ question.choice_a }}</label><br>
+      <label><input type="radio" name="answer" value="b"> {{ question.choice_b }}</label><br>
+      <label><input type="radio" name="answer" value="c"> {{ question.choice_c }}</label><br>
+      <label><input type="radio" name="answer" value="d"> {{ question.choice_d }}</label><br> <br>
+      <a href = "http://127.0.0.1:8000/user/nodejsresult"><button>  Submit  </button></a> &nbsp; <br><br>
+
+
+      {% endif %}   
+        
+    {% endfor %}
+    
+        </div>
+  
+  

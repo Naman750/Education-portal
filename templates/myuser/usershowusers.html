@@ -31,7 +31,7 @@
                 <a class="nav-link" aria-current="page" href="/user/usershowusers">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/user/loginform">Logout</a>
+                <a class="nav-link" aria-current="page" href="/user/adminlogout">Logout</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/user/usershowcourses">Usershowcourses</a>
@@ -104,7 +104,7 @@
 
               {% if user.uid == 1 %}
               {% load static %}
-          <center><img src = "{% static 'uimg/suyash.jpg' %}"></center>
+          <center><img src = "{% static 'uimg/suyash1.jpg' %}"></center>
            {% endif %}   
            {% if user.uid == 2 %}
               
@@ -112,11 +112,11 @@
            {% endif %}
            {% if user.uid == 3 %}
               
-           <center> <img src = "{% static 'uimg/Nikhil.jpg' %}"></center>
+           <center> <img src = "{% static 'uimg/Nikhil1.jpg' %}"></center>
              {% endif %}
              {% if user.uid == 4 %}
               
-             <center> <img src = "{% static 'uimg/Raman.jpg' %}"></center>
+             <center> <img src = "{% static 'uimg/Raman1.jpg' %}"></center>
                {% endif %}
 
             </td>
@@ -142,6 +142,8 @@
             <td scope="col"> <a href = "http://127.0.0.1:8000/admin/myuser/userreg/add/"> <button>Insert</button> </a> &nbsp;
             <a href = "http://127.0.0.1:8000/admin/myuser/userreg/58/change/"><button>Update User </button></a> &nbsp;
             <a href = "http://127.0.0.1:8000/admin/myuser/userreg/58/delete/"><button> Delete  User </button></a> &nbsp;
+            
+
             {% endif %}
 
 
