@@ -4,6 +4,7 @@ from  myuser.models import CourseReg1
 from  myuser.models import CourseApply
 from  myuser.models import adminuser
 from  myuser.models import userReg
+from  myuser.models import Attendance
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.conf import settings
@@ -11,6 +12,7 @@ import os
 from django.http import HttpResponse
 from .forms import QuizForm
 from .models import QuizQuestion
+
 
 
     
@@ -27,6 +29,16 @@ def quiz(request):
       return render(request, 'myuser/quiz.html', data)
     except:
          return render(request, 'myuser/quiz.html')
+
+
+def showattendance(request):
+    try:   
+        attendance = Attendance.objects.all()
+        data = {"attendances": attendance }
+        return render(request, 'myuser/showattendance.html', data)
+    except:
+         return render(request, 'myuser/showattendance.html')
+
 
 def javaresult(request):
     try:
@@ -73,6 +85,24 @@ def userlogout(request):
     #return HttpResponse("Welcome user page")
     #return render(request, "myuser/about.html")
     return render(request, "myuser/userlogout.html")
+
+def userattendance(request):
+          try:    
+            uname = request.POST.get('name') # these fields are come from my user templates
+            udate = request.POST.get('date')  # these fields are come from my user templates
+            present_absent = request.POST.get('pora') 
+            print(uname, udate , present_absent)
+            result = Attendance(student_name = uname, date= udate,  present_absent = present_absent)
+            result.save()
+            print("Record Inserted for Userattendance ")
+            return render(request, "myuser/userattendance.html")
+          except:
+               return render(request, "myuser/userattendance.html")
+               
+         
+    
+    
+
 
 
 def userlogin(request):

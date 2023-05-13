@@ -51,9 +51,13 @@ class QuizQuestion(models.Model):
     choice_d = models.CharField(max_length=200)
     correct_choice = models.CharField(max_length= 200)
 
-    def __str__(self):
-        return self.question_text
 
+    
+class Attendance(models.Model):
+    student_name  = models.CharField(max_length=100,null= True)
+    date = models.DateField()
+    present_absent   = models.CharField( max_length=100 , default= True)
+    
     
     
 

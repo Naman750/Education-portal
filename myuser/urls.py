@@ -49,7 +49,8 @@ urlpatterns = [
     path("nodejsresult",views.nodejsresult, name= "nodejsresult"),
     path("userlogin",views.userlogin, name= "userlogin"),
     path("userlogout",views.userlogout, name= "userlogout"),
-    
+    path("showattendance",views.showattendance, name= "showattendance"),
+    path("userattendance",views.userattendance, name= "userattendance"),
      
     
     
