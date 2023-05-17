@@ -109,16 +109,13 @@ def userlogin(request):
                     try:                
                        lid = request.POST.get('lid')
                        pwd = request.POST.get('pwd') 
-                       searchedusers = userReg.objects.filter(email = lid, password = pwd)
-                       print("show searched users",searchedusers)
-                       print("show searched users",len(searchedusers))
-                       data = {"susers": searchedusers}
-                       if len(searchedusers) == 0:
+                       users = userReg.objects.filter(email = lid, password = pwd)
+                       if len(users) == 0:
                             print("user is unauthenticated")
                             return render(request, "myuser/userlogout.html")
                        else:
                          print("user is authenticated")                                         
-                         return render(request, "myuser/userlogin.html",data)
+                         return render(request, "myuser/userlogin.html")
                     except:
                          
                          return render(request, "myuser/userlogout.html")
@@ -201,16 +198,13 @@ def adminlogin(request):
                     try:                
                        lid = request.POST.get('lid')
                        pwd = request.POST.get('pwd') 
-                       searchedusers = adminuser.objects.filter(adminemail = lid, adminpassword = pwd)
-                       print("show searched users",searchedusers)
-                       print("show searched users",len(searchedusers))
-                       data = {"susers": searchedusers}
-                       if len(searchedusers) == 0:
-                            print("user is unauthenticated")
+                       admin = adminuser.objects.filter(adminemail = lid, adminpassword = pwd)
+                       if len(admin) == 0:
+                            print("admin  is unauthenticated")
                             return render(request, "myuser/adminlogout.html")
                        else:
-                         print("user is authenticated")                                         
-                         return render(request, "myuser/adminlogin.html",data)
+                         print("admin  is authenticated")                                         
+                         return render(request, "myuser/adminlogin.html")
                     except:
                          
                          return render(request, "myuser/adminlogout.html")
